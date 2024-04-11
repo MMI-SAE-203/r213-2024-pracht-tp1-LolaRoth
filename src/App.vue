@@ -18,7 +18,7 @@ onErrorCaptured((err, instance, info) => {
     <button @pointerdown="menuIsOpen = !menuIsOpen"
     aria-controls="mainNav"
     aria-expanded="true"
-    class="rounded-full border-2 border-red-600 bg-red-300 px-2"
+    class="bg-indigo-500 rounded-lg p-2 text-white bg-sky-500/100 hover:bg-cyan-600 text-center leading-5 border-orange-950"
   >
     menu
   </button>
@@ -29,8 +29,8 @@ onErrorCaptured((err, instance, info) => {
     leave-active-class="-translate-x-full"
   >
   <nav id="mainNav" v-show="menuIsOpen">
-    <ul>
-      <li ><RouterLink to="/index" > Accueil </RouterLink></li>
+    <ul class="bg-emerald-200 text-center">
+      <li class="decoration-double"><RouterLink to="/index" > Accueil </RouterLink></li>
       <li ><RouterLink to="/accordeon" > Accordeon </RouterLink></li>
       <li ><RouterLink to="/boucle_sur_donnees" > Boucle sur données </RouterLink></li>
     </ul>
