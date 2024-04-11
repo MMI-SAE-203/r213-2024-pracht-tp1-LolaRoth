@@ -30,9 +30,9 @@ onErrorCaptured((err, instance, info) => {
   >
   <nav id="mainNav" v-show="menuIsOpen">
     <ul>
-      <li ><RouterLink to="/index" class="text-red-500 underline" > Accueil </RouterLink></li>
+      <li ><RouterLink to="/index" > Accueil </RouterLink></li>
       <li ><RouterLink to="/accordeon" > Accordeon </RouterLink></li>
-      <li ><RouterLink to="/" > Page 3 </RouterLink></li>
+      <li ><RouterLink to="/boucle_sur_donnees" > Boucle sur données </RouterLink></li>
     </ul>
   </nav>
 </Transition>
