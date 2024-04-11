@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import { onErrorCaptured } from 'vue'
 import { RouterLink, RouterView } from 'vue-router/auto'
-import {ref} from 'vue'
+import { ref } from 'vue'
+const sectionOpen = ref(null)
 const sectionsData = [
     {
       label: 'bouton 1',
@@ -32,11 +33,12 @@ onErrorCaptured((err, instance, info) => {
   console.error('erreur : ', err, '\ninfo : ', info, '\ncomposant : ', instance)
   return true
 })
+
 </script>
 <template>
     <section v-for="({ label, texte }, key) of sectionsData" :key="key">
     <pre class="font-mono">key : {{ key }}</pre>
-    <pre class="font-mono">label : {{ label }}</pre>
-    <pre class="font-mono">texte : {{ texte }}</pre>
+    <pre @pointerdown="sectionOpen = sectionOpen === key ? null : key" class="font-mono">label : {{ label }}</pre>
+    <pre class="font-mono" v-show="sectionOpen === key">texte : {{ texte }}</pre>
   </section>
 </template>
