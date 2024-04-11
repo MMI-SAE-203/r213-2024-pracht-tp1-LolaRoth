@@ -5,6 +5,7 @@ const maVar = ref(false)
 const menuIsOpen = ref(false)
 </script>
 
+
 <template>
   <button @pointerdown="maVar = true">Montrer</button>
   <button @pointerdown="maVar = false">Cacher</button>
