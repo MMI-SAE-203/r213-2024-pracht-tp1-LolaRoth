@@ -2,6 +2,7 @@
 import { onErrorCaptured } from 'vue'
 import { RouterLink, RouterView } from 'vue-router/auto'
 import {ref} from 'vue'
+
 const menuIsOpen = ref(false)
 
 
@@ -13,7 +14,7 @@ onErrorCaptured((err, instance, info) => {
 
 <template>
   <header>
-    <button
+    <button @pointerdown="menuIsOpen = !menuIsOpen"
     aria-controls="mainNav"
     aria-expanded="true"
     class="rounded-full border-2 border-red-600 bg-red-300 px-2"
@@ -22,9 +23,9 @@ onErrorCaptured((err, instance, info) => {
   </button>
   <nav id="mainNav">
     <ul>
-      <li><RouterLink to="/" class="text-red-500 underline"> Accueil </RouterLink></li>
-      <li><RouterLink to="/" > Page 2 </RouterLink></li>
-      <li><RouterLink to="/" > Page 3 </RouterLink></li>
+      <li v-show="menuIsOpen"><RouterLink to="/" class="text-red-500 underline" > Accueil </RouterLink></li>
+      <li v-show="menuIsOpen"><RouterLink to="/" > Page 2 </RouterLink></li>
+      <li v-show="menuIsOpen"><RouterLink to="/" > Page 3 </RouterLink></li>
     </ul>
   </nav>
         

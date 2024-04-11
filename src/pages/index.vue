@@ -2,6 +2,7 @@
 import { ref } from 'vue'
 
 const maVar = ref(false)
+const menuIsOpen = ref(false)
 </script>
 
 <template>
